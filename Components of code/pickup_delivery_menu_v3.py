@@ -3,15 +3,8 @@
 #Bug - need to make code so that it only accepts numbers 1 or 2 
 
 print ("Is your order for pickup or delivery?")
-
 print ("For pickup please enter 1")
 print ("For delivery please enter 2")
-
-
-
-low = 1
-high = 2
-
 while True:
     try:
         delivery = int(input("Please enter a number "))
