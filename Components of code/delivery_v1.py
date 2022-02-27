@@ -12,6 +12,8 @@ def not_blank(question):
 
 
 
+
+
 #Basic instructions
 question = ("Please enter your name ")
 customer_details['name'] = not_blank(question)
@@ -32,4 +34,3 @@ print (customer_details['street'])
 question = ("Please enter you suburb ")
 customer_details['suburb'] = not_blank(question )
 print (customer_details['suburb'])
-
