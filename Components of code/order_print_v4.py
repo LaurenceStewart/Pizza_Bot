@@ -5,9 +5,12 @@ order_cost = [8.50, 8.50, 8.50, 13.50]
 cust_details = {'name':'Laurence', 'phone':'0219843298', 'house':'23', 'street':'Evelyn', 'suburb':'Howick'}
 
 
-print("\n Customer name: {} Custoner Phone:\n{} Customer House Number:\n{} Customer Street Name:\n{} Customer Suburb:\n{}".format( cust_details['name'],cust_details['phone'],cust_details['house'],cust_details['street'],cust_details['suburb']))
 
 
+#print(f"Customer Name: {cust_details['name']} \nCustomer Phone: {cust_details['phone']} \nCustomer Address: {cust_details['house']} {cust_details['street']} {cust_details['suburb']}")
+
+total_cost = sum(order_cost)
+print(total_cost)
 
 
 
