@@ -49,6 +49,7 @@ def welcome():
 
 #Menu for pick up or delivery
 def order_type():
+    del_pick = ""
     print ("Is your order for pickup or delivery?")
     print ("For pickup please enter 1")
     print ("For delivery please enter 2")
@@ -58,17 +59,20 @@ def order_type():
             if delivery >= 1 and delivery <= 2:
                 if delivery == 1:
                     print("Pickup")
+                    del_pick = "pickup"
                     pickup_info()
                     break
                 elif delivery == 2:
                     print ("Delivery")
                     delivery_info()
+                    del_pick = "delivery"
                     break
             else: 
                 print("The number entered must be 1 or 2")
         except ValueError:
             print ("That is not a valid number")
             print ("Please enter 1 or 2")
+    return del_pick
 
 
 #Pick up information - name and phone
@@ -107,9 +111,7 @@ def delivery_info():
 
 
    
-    
-
-#  Pizza menu
+    #  Pizza menu
 def menu():
     number_pizzas = 12
 
@@ -160,7 +162,22 @@ def order_pizza():
 
 
 #Print order out - include if order is pickup or delivery, names and prices or pizza. total cost including delivery charge
-
+def print_order(del_pick):
+    total_cost = sum(order_cost)
+    print ("Customer Details")
+    if del_pick == "delivery":
+        print(f"Customer Name: {customer_details['name']} \nCustomer Phone: {customer_details['phone']}")
+    elif del_pick == "pickup":
+        print(f"Customer Name: {customer_details['name']} \nCustomer Phone: {customer_details['phone']} \nCustomer Address: {customer_details['house']} {customer_details['street']} {customer_details['suburb']}")
+    print()
+    print("Order Details")
+    count = 0
+    for item in order_list:
+        print("Ordered: {} Cost ${:.2f}".format(item, order_cost[count]))
+        count = count+1
+    print()
+    print("Order Cost")
+    print(f"${total_cost:.2f}")
 
 
 
@@ -175,20 +192,19 @@ def order_pizza():
 
 
 
-
-
-
 #main function
 def main():
     '''
     Purpose: To run all runctions.      
+    a welcome message
     Parameters: none
     Returns: none
     '''
     welcome()
-    order_type()
+    del_pick = order_type()
     menu()
     order_pizza()
+    print_order(del_pick)
     
 
 main() 
