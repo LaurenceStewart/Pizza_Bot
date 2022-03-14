@@ -179,7 +179,7 @@ def print_order(del_pick):
         print("Ordered: {} Cost ${:.2f}".format(item, order_cost[count]))
         count = count+1
     print()
-    print("Order Cost")
+    print("Total Order Cost")
     print(f"${total_cost:.2f}")
 
 
