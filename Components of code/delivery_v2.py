@@ -33,3 +33,5 @@ def delivery():
     question = ("Please enter you suburb ")
     customer_details['suburb'] = not_blank(question )
     print (customer_details['suburb'])
+
+delivery()
